@@ -104,7 +104,7 @@ override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appW
                 action = "REFRESH_CONTACT"
                 putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId)
             }
-            val refreshPendingIntent = PendingIntent.getBroadcast(context, appWidgetId, refreshIntent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
+            val refreshPendingIntent = PendingIntent.getBroadcast(context, appWidgetId * 10, refreshIntent, PendingIntent.FLAG_CANCEL_CURRENT or PendingIntent.FLAG_IMMUTABLE)
             setOnClickPendingIntent(R.id.refresh_button, refreshPendingIntent)
 
             // Set up click listener for the contact picture/name
